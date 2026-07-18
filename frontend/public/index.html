@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Patchwork Labs — Skyhigh Project 3</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: #1e293b;
+      padding: 2.5rem 3rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    h1 { margin-top: 0; font-size: 1.5rem; }
+    .counter { font-size: 3rem; font-weight: bold; color: #38bdf8; }
+    .meta { margin-top: 1rem; font-size: 0.85rem; color: #94a3b8; }
+    .pill {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 2px 10px;
+      border-radius: 999px;
+      background: #334155;
+      font-size: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🚀 Patchwork Labs is on Kubernetes now</h1>
+    <div class="counter" id="counter">--</div>
+    <div class="meta">served by backend pod: <span id="hostname">loading…</span></div>
+    <div class="pill" id="secret-status">checking secret…</div>
+  </div>
+
+  <script>
+    async function loadData() {
+      try {
+        const res = await fetch("/api/data");
+        const data = await res.json();
+        document.getElementById("counter").textContent = data.counter;
+        document.getElementById("hostname").textContent = data.hostname;
+        document.getElementById("secret-status").textContent = data.secret_loaded
+          ? "✅ secret loaded"
+          : "⚠️ secret missing";
+      } catch (err) {
+        document.getElementById("hostname").textContent = "backend unreachable";
+      }
+    }
+    loadData();
+    setInterval(loadData, 3000);
+  </script>
+</body>
+</html>
