@@ -124,13 +124,13 @@ Then open `http://localhost:8080`.
 
 ## 📸 Screenshots
 
-| | |
-|---|---|
-| Docker Compose — browser | `screenshots/01-docker-compose-browser.png` |
-| Docker Compose — terminal | `screenshots/02-docker-compose-terminal.png` |
-| `kubectl get pods` | `screenshots/03-kubectl-get-pods.png` |
-| `kubectl get services` | `screenshots/04-kubectl-get-services.png` |
-| Live on Kubernetes | `screenshots/05-kubernetes-browser.png` |
+| Screenshot | Preview |
+|------------|---------|
+| Docker Compose — browser | ![](screenshots/01-docker-compose-browser.png) |
+| Docker Compose — terminal | ![](screenshots/02-docker-compose-terminal.png) |
+| kubectl get pods | ![](screenshots/03-kubectl-get-pods.png) |
+| kubectl get services | ![](screenshots/04-kubectl-get-services.png) |
+| Live on Kubernetes | ![](screenshots/05-kubernetes-browser.png) |
 
 ## 🐛 Challenges & Solutions
 
