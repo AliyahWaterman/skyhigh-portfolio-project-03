@@ -5,6 +5,8 @@ with Docker Compose, pushed to Docker Hub, and deployed to Kubernetes with
 3 horizontally-scaled frontend replicas, automated health checks, and
 configuration cleanly separated from code via a ConfigMap and Secret.
 
+**Status:** ✅ Complete
+
 ## 📋 The Scenario
 
 Patchwork Labs had been running its entire product on a single EC2
