@@ -180,6 +180,10 @@ you're reading output that belongs to the deployment you're debugging.
 - **Helm chart** to package these 6 manifests into one reusable,
   parameterized deployment.
 
+  ## 🔜 Next Steps
+- Add CI/CD pipeline with GitHub Actions
+- Set up Helm chart for deployment
+
 ## 💡 Key Learnings
 
 - The difference between a Deployment's `matchLabels`/pod-template
