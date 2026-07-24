@@ -16,8 +16,8 @@ API_KEY = os.environ.get("API_KEY", "not-set")
 def data():
     global _counter
     with _counter_lock:
-        _counter += 1
-        current = _counter
+         _request_count += 1
+        count = _request_count
 
     return jsonify(
         {
