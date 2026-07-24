@@ -6,8 +6,6 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-# Simple in-memory counter, protected by a lock since Flask's dev
-# server can handle a few concurrent requests.
 _counter_lock = threading.Lock()
 _counter = 0
 
@@ -33,6 +31,17 @@ def data():
 @app.route("/health")
 def health():
     return jsonify({"status": "ok"}), 200
+
+
+@app.route("/api/info")
+def info():
+    return jsonify(
+        {
+            "service": "skyhigh-backend",
+            "version": "1.0.0",
+            "hostname": socket.gethostname(),
+        }
+    )
 
 
 if __name__ == "__main__":
