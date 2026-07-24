@@ -203,3 +203,6 @@ GitHub: [@AliyahWaterman](https://github.com/AliyahWaterman)
 
 ## 📄 License
 This project is for portfolio/educational purposes.
+
+## 🤝 Contributing
+This is a personal portfolio project, not currently open to contributions.
