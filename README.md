@@ -192,3 +192,7 @@ you're reading output that belongs to the deployment you're debugging.
   anyone with real cluster access — Base64 is encoding, not encryption.
 - Local Kubernetes (kind) doesn't always mirror real cloud cluster networking — kubectl port-forward is a standard tool for bridging that gap during development.
 
+## 👤 Author
+
+**Aliyah Waterman**
+GitHub: [@AliyahWaterman](https://github.com/AliyahWaterman)
