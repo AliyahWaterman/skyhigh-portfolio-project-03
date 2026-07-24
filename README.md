@@ -196,3 +196,6 @@ you're reading output that belongs to the deployment you're debugging.
 
 **Aliyah Waterman**
 GitHub: [@AliyahWaterman](https://github.com/AliyahWaterman)
+
+## 📄 License
+This project is for portfolio/educational purposes.
