@@ -14,6 +14,3 @@ def test_info_returns_service_name():
     response = client.get("/api/info")
     assert response.status_code == 200
     assert response.get_json()["service"] == "skyhigh-backend"
-
-    
-
