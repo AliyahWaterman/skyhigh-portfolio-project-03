@@ -39,7 +39,7 @@ def info():
     return jsonify(
         {
             "service": "skyhigh-backend",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "hostname": socket.gethostname(),
         }
     )
