@@ -18,6 +18,7 @@ LD_SDK_KEY = os.environ.get("LD_SDK_KEY", "not-set")
 ldclient.set_config(Config(LD_SDK_KEY))
 ld_client = ldclient.get()
 
+
 @app.route("/api/data")
 def data():
     global _counter
@@ -41,14 +42,21 @@ def health():
 
 @app.route("/api/info")
 def info():
+    context = {"key": "skyhigh-user", "kind": "user"}
+    message = "standard info"
+    if ld_client.variation("new-info-message", context, False):
+        message = "NEW flagged message is live!"
+
     return jsonify(
         {
             "service": "skyhigh-backend",
             "version": "1.2.0",
             "hostname": socket.gethostname(),
+            "message": message,
         }
     )
 
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+    
