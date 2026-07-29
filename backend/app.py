@@ -3,6 +3,7 @@ import socket
 import threading
 
 import ldclient
+from ldclient import Context
 from ldclient.config import Config
 
 from flask import Flask, jsonify
@@ -42,7 +43,7 @@ def health():
 
 @app.route("/api/info")
 def info():
-    context = {"key": "skyhigh-user", "kind": "user"}
+    context = Context.builder("skyhigh-user").kind("user").build()
     message = "standard info"
     if ld_client.variation("new-info-message", context, False):
         message = "NEW flagged message is live!"
