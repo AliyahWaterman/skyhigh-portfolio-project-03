@@ -2,6 +2,8 @@ import os
 import socket
 import threading
 
+import ldclient
+from ldclient.config import Config
 
 from flask import Flask, jsonify
 
@@ -15,7 +17,6 @@ API_KEY = os.environ.get("API_KEY", "not-set")
 LD_SDK_KEY = os.environ.get("LD_SDK_KEY", "not-set")
 ldclient.set_config(Config(LD_SDK_KEY))
 ld_client = ldclient.get()
-
 
 @app.route("/api/data")
 def data():
